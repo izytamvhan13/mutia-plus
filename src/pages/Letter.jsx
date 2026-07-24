@@ -95,7 +95,7 @@ function Letter() {
             </div>
 
             <button
-                onClick={() => navigate("/ending")}
+                onClick={() => navigate("/secret")}
                 className="
                 mt-16
                 bg-red-600
@@ -106,7 +106,7 @@ function Letter() {
                 transition
                 "
             >
-                Continue to Ending →
+                Continue to Secret →
             </button>
 
         </div>

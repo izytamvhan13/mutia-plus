@@ -8,6 +8,7 @@ import MyList from "./pages/MyList";
 import Timeline from "./pages/Timeline";
 import Gallery from "./pages/Gallery";
 import Letter from "./pages/Letter";
+import Secret from "./pages/Secret";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
     <Route path="/timeline" element={<Timeline />} />
     <Route path="/gallery" element={<Gallery />} />
     <Route path="/letter" element={<Letter />} />
+    <Route path="/secret" element={<Secret />} />
 </Routes>
         </BrowserRouter>
     );
