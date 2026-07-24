@@ -1,7 +1,16 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";  
 import PageWrapper from "../components/PageWrapper";
 
 function Ending() {
+    useEffect(() => {
+
+    localStorage.setItem(
+        "lastPage",
+        "Ending"
+    );
+
+}, []);
 
     const navigate = useNavigate();
 

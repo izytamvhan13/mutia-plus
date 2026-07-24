@@ -1,4 +1,5 @@
 import mutia from "../assets/images/mutia.jpg";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
 import { quotes } from "../constants/quotes";
@@ -32,6 +33,33 @@ const today = new Date();
 const daysTogether = Math.floor(
     (today - firstMeet) / (1000 * 60 * 60 * 24)
 );
+const [visits, setVisits] = useState(0);
+const lastPage =
+    localStorage.getItem("lastPage");
+
+useEffect(() => {
+
+    const totalVisits =
+        Number(localStorage.getItem("visits")) || 0;
+
+    localStorage.setItem(
+        "visits",
+        totalVisits + 1
+    );
+
+    localStorage.setItem(
+        "lastPage",
+        "Home"
+    );
+
+    setVisits(totalVisits + 1);
+
+}, []);
+const currentEpisode = 1;
+const totalEpisodes = 7;
+
+const progress =
+    (currentEpisode / totalEpisodes) * 100;
     const trending = [
         {
             title: "Her Smile",
@@ -157,6 +185,51 @@ const daysTogether = Math.floor(
                 <p className="mt-5 text-red-500">
     {daysTogether} days of knowing each other.
 </p>
+<p className="mt-4 text-gray-400">
+    Welcome back, Sayangkuu.
+</p>
+
+<p className="mt-2 text-gray-500">
+    You've visited MUTIA RAHMAH {visits} times.
+</p>
+<p className="mt-10 text-red-500">
+    Last Visited: {lastPage || "Home"}
+</p>
+<div className="mt-8 max-w-md">
+
+    <p className="text-gray-400">
+        Watching MUTIA RAHMAH
+    </p>
+
+    <p className="mt-2">
+        Episode {currentEpisode} / {totalEpisodes}
+    </p>
+
+    <div className="w-full h-2 bg-gray-800 rounded mt-4">
+
+        <div
+            className="h-2 bg-red-600 rounded"
+            style={{
+                width: `${progress}%`,
+            }}
+        />
+
+    </div>
+
+    <p className="mt-2 text-gray-500">
+    {Math.round(progress)}% completed
+</p>
+    <div className="mt-5 flex gap-6 text-sm text-gray-500 flex-wrap">
+
+    <p>7 Episodes</p>
+
+    <p>1 Ending Rahasia</p>
+
+    <p>∞ Memories</p>
+
+</div>
+
+</div>
 
                 <div
                     className="
@@ -252,15 +325,27 @@ duration-300 transition">
                         </p>
                     </div>
 
-                    <div className="w-full md:w-72 h-40 bg-gray-900 rounded-lg p-5 hover:scale-110
-hover:-translate-y-2
-duration-300 transition">
-                        <h3 className="font-semibold">Episode 4</h3>
+                    <div
+    onClick={() => navigate("/letter")}
+    className="
+    cursor-pointer
+    w-full
+    md:w-72
+    h-40
+    bg-gray-900
+    rounded-lg
+    p-5
+    hover:scale-110
+    hover:-translate-y-2
+    duration-300
+    transition
+    "
+>
+    <h3 className="font-semibold">
+        Continue Watching
+    </h3>
 
-                        <p className="mt-3 text-gray-400">
-                            The Next Episode
-                        </p>
-                    </div>
+</div>
                 </div>
             </div>
 

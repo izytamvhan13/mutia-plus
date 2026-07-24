@@ -1,7 +1,16 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import PageWrapper from "../components/PageWrapper";
 
 function MyList() {
+    useEffect(() => {
+
+    localStorage.setItem(
+        "lastPage",
+        "MyList"
+    );
+
+}, []);
     const navigate = useNavigate();
     const memories = [
         "First Chat",

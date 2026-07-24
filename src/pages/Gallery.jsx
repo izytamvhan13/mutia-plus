@@ -12,8 +12,17 @@ import PageWrapper from "../components/PageWrapper";
 
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
 
 function Gallery() {
+    useEffect(() => {
+
+    localStorage.setItem(
+        "lastPage",
+        "Gallery"
+    );
+
+}, []);
     const navigate = useNavigate();
     const [selectedPhoto, setSelectedPhoto] = useState(null);
 

@@ -1,8 +1,17 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
 
 function Secret() {
+    useEffect(() => {
+
+    localStorage.setItem(
+        "lastPage",
+        "Secret"
+    );
+
+}, []);
     const messages = [
     "You found the secret.",
     "Achievement Unlocked.",

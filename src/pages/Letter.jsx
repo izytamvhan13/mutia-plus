@@ -3,6 +3,14 @@ import { useNavigate } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
 
 function Letter() {
+    useEffect(() => {
+
+    localStorage.setItem(
+        "lastPage",
+        "Letter"
+    );
+
+}, []);
   const fullText = `
 Happy Birthday, Sayang.
 
