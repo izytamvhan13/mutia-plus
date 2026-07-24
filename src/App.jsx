@@ -12,6 +12,7 @@ import Secret from "./pages/Secret";
 import Ending from "./pages/Ending";
 import MusicPlayer from "./components/MusicPlayer";
 import FloatingHearts from "./components/FloatingHearts";
+import Credits from "./pages/Credits";
 
 function App() {
     return (
@@ -31,6 +32,7 @@ function App() {
     <Route path="/letter" element={<Letter />} />
     <Route path="/secret" element={<Secret />} />
     <Route path="/ending" element={<Ending />} />
+    <Route path="/credits" element={<Credits />} />
 </Routes>
         </BrowserRouter>
     );

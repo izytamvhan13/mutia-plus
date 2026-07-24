@@ -4,6 +4,12 @@ import { useNavigate } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
 import { quotes } from "../constants/quotes";
 import Reveal from "../components/Reveal";
+import LoadingScreen from "../components/LoadingScreen";
+import { FaPlay, FaInfoCircle } from "react-icons/fa";
+import { FaHome, FaFilm, FaHeart } from "react-icons/fa";
+import { FaTrophy } from "react-icons/fa";
+import { FaPlayCircle } from "react-icons/fa";
+import { FaTv } from "react-icons/fa";
 
 import p1 from "../assets/posters/1.jpg";
 import p2 from "../assets/posters/2.jpg";
@@ -12,8 +18,15 @@ import p4 from "../assets/posters/4.jpg";
 import p5 from "../assets/posters/5.jpg";
 
 function Home() {
-    const navigate = useNavigate();
 
+    const navigate = useNavigate();
+    const [showPopup, setShowPopup] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const secretUnlocked =
+    localStorage.getItem("foundSecret");
+
+const readLetter =
+    localStorage.getItem("readLetter");
     const hour = new Date().getHours();
 
 const greeting =
@@ -55,6 +68,30 @@ useEffect(() => {
     setVisits(totalVisits + 1);
 
 }, []);
+
+useEffect(() => {
+
+    const timer = setTimeout(() => {
+
+        setShowPopup(true);
+
+    }, 60000);
+
+    return () => clearTimeout(timer);
+
+}, []);
+
+useEffect(() => {
+
+    const timer = setTimeout(() => {
+
+        setLoading(false);
+
+    }, 2500);
+
+    return () => clearTimeout(timer);
+
+}, []);
 const currentEpisode = 1;
 const totalEpisodes = 7;
 
@@ -83,7 +120,12 @@ const progress =
         },
     ];
 
+    if (loading) {
+        return <LoadingScreen />;
+    }
+
     return (
+        
         <PageWrapper>
         <Reveal>
         <div
@@ -127,16 +169,33 @@ const progress =
                     NETFLIX
                 </h1>
 
-                <div className="hidden md:flex gap-8 text-gray-300">
-                    <p>Home</p>
-                    <p>Series</p>
-                    <p
-    className="cursor-pointer"
-    onClick={() => navigate("/my-list")}
->
-    My List
-</p>
-                </div>
+                <div className="hidden md:flex gap-10">
+
+    <div className="flex gap-2 items-center">
+        <FaHome />
+        <p>Home</p>
+    </div>
+
+    <div className="flex gap-2 items-center">
+        <FaFilm />
+        <p>Series</p>
+    </div>
+
+    <div
+        onClick={() => navigate("/my-list")}
+        className="
+        flex
+        gap-2
+        items-center
+        cursor-pointer
+        "
+    >
+        <FaHeart />
+
+        <p>My List</p>
+    </div>
+
+</div>
             </nav>
 
             {/* Hero */}
@@ -190,7 +249,7 @@ const progress =
 </p>
 
 <p className="mt-2 text-gray-500">
-    You've visited MUTIA RAHMAH {visits} times.
+    You've visited MUTIA+ {visits} times.
 </p>
 <p className="mt-10 text-red-500">
     Last Visited: {lastPage || "Home"}
@@ -198,7 +257,7 @@ const progress =
 <div className="mt-8 max-w-md">
 
     <p className="text-gray-400">
-        Watching MUTIA RAHMAH
+        Watching Birthday Personal
     </p>
 
     <p className="mt-2">
@@ -228,6 +287,25 @@ const progress =
     <p>∞ Memories</p>
 
 </div>
+<div className="mt-8 space-y-2 text-sm">
+
+    <p>
+        🏆 First Visit
+    </p>
+
+    {readLetter && (
+        <p>
+            🏆 Read The Letter
+        </p>
+    )}
+
+    {secretUnlocked && (
+        <p>
+            🏆 Found The Secret
+        </p>
+    )}
+
+</div>
 
 </div>
 
@@ -241,33 +319,44 @@ const progress =
                     "
                 >
                     <button
-                        className="
-                        bg-white
-                        text-black
-                        px-8
-                        py-3
-                        rounded
-                        hover:scale-110
-hover:-translate-y-2
-duration-300
-                        transition
-                        "
-                    >
-                        ▶ Play
-                    </button>
+    className="
+    bg-white
+    text-black
+    px-8
+    py-3
+    rounded-md
+    flex
+    items-center
+    gap-3
+    font-semibold
+    hover:scale-105
+    duration-300
+    "
+>
+    <FaPlay />
+
+    Play
+</button>
 
                     <button
-                        className="
-                        bg-gray-700
-                        px-8
-                        py-3
-                        rounded
-                        hover:bg-gray-600
-                        transition
-                        "
-                    >
-                        More Info
-                    </button>
+    className="
+    bg-gray-700/80
+    backdrop-blur-md
+    px-8
+    py-3
+    rounded-md
+    flex
+    items-center
+    gap-3
+    font-semibold
+    hover:bg-gray-600
+    duration-300
+    "
+>
+    <FaInfoCircle />
+
+    More Info
+</button>
                 </div>
             </div>
 
@@ -416,6 +505,30 @@ duration-300 transition">
                 </p>
             </footer>
         </div>
+        {showPopup && (
+
+    <div className="flex gap-3 items-center">
+        
+        <p>
+            Are you still watching?
+        </p>
+
+        <button
+            onClick={() => setShowPopup(false)}
+            className="
+            mt-3
+            bg-red-600
+            px-4
+            py-2
+            rounded
+            "
+        >
+            Yes, always.
+        </button>
+
+    </div>
+
+)}
         </Reveal>
         </PageWrapper>
     );

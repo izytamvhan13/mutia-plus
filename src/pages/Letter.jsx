@@ -6,6 +6,11 @@ function Letter() {
     useEffect(() => {
 
     localStorage.setItem(
+        "readLetter",
+        "true"
+    );
+
+    localStorage.setItem(
         "lastPage",
         "Letter"
     );

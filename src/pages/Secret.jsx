@@ -28,8 +28,15 @@ const randomMessage =
     const checkPassword = () => {
 
         if (password === "160818") {
-            navigate("/ending");
-        } else {
+
+    localStorage.setItem(
+        "foundSecret",
+        "true"
+    );
+
+    navigate("/ending");
+
+}else {
             alert("Tanggal yg paling km ingat weeeee.");
         }
     };

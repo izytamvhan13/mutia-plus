@@ -45,7 +45,7 @@ function Ending() {
                 </h2>
 
                 <p className="mt-10 text-gray-500">
-                    SAYANG
+                    MUTIA+
                 </p>
 
                 <p className="text-gray-500">
