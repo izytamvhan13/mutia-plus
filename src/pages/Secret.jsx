@@ -1,9 +1,17 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
-import { SECRET_PASSWORD } from "../config/constants";
 
 function Secret() {
+    const messages = [
+    "You found the secret.",
+    "Achievement Unlocked.",
+    "There are still many stories left.",
+    "You're my favorite easter egg.",
+];
+
+const randomMessage =
+    messages[Math.floor(Math.random() * messages.length)];
 
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -31,16 +39,9 @@ function Secret() {
             p-5
             "
         >
-            <h1
-                className="
-                text-4xl
-                md:text-6xl
-                font-bold
-                mb-5
-                "
-            >
-                Secret Chapter
-            </h1>
+            <h1>
+    {randomMessage}
+</h1>
 
             <p className="text-gray-400 mb-10 text-center">
                 This page is only for Mutia Rahmah.

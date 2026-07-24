@@ -1,6 +1,7 @@
 import mutia from "../assets/images/mutia.jpg";
 import { useNavigate } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
+import { quotes } from "../constants/quotes";
 import Reveal from "../components/Reveal";
 
 import p1 from "../assets/posters/1.jpg";
@@ -11,6 +12,26 @@ import p5 from "../assets/posters/5.jpg";
 
 function Home() {
     const navigate = useNavigate();
+
+    const hour = new Date().getHours();
+
+const greeting =
+    hour < 12
+        ? "Good Morning, Sayangkuu."
+        : hour < 18
+        ? "Good Afternoon, Sayangkuu."
+        : "Good Evening, Sayangkuu.";
+
+const randomQuote =
+    quotes[Math.floor(Math.random() * quotes.length)];
+
+const firstMeet = new Date("2018-08-16");
+
+const today = new Date();
+
+const daysTogether = Math.floor(
+    (today - firstMeet) / (1000 * 60 * 60 * 24)
+);
     const trending = [
         {
             title: "Her Smile",
@@ -116,10 +137,16 @@ function Home() {
                 >
                     MUTIA RAHMAH
                 </h1>
+                <p className="mt-4 text-gray-300">
+    {greeting}
+</p>
 
                 <p className="mt-5 text-gray-300 max-w-xl">
                     Romance • Comedy • Comfort Person
                 </p>
+                <p className="mt-4 italic text-gray-400">
+    "{randomQuote}"
+</p>
 
                 <p className="mt-5 max-w-2xl text-gray-400">
                     Di antara jutaan manusia di bumi, semesta memilih
@@ -127,6 +154,9 @@ function Home() {
                     dengan seseorang yang selalu menemukan rumah di dalam
                     senyumnya.
                 </p>
+                <p className="mt-5 text-red-500">
+    {daysTogether} days of knowing each other.
+</p>
 
                 <div
                     className="
@@ -289,7 +319,12 @@ duration-300 transition">
                 py-10
                 "
             >
-                <p>Built with love by Prizy Aditia.</p>
+                <p
+    className="cursor-pointer"
+    onClick={() => navigate("/secret")}
+>
+    Built with love by Prizy Aditia Fitra.
+</p>
 
                 <p className="mt-2">
                     Happy Birthday, Mutia Rahmah.
