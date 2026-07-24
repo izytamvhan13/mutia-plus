@@ -20,6 +20,18 @@ import p5 from "../assets/posters/5.jpg";
 function Home() {
 
     const navigate = useNavigate();
+    useEffect(() => {
+
+    const profile =
+        localStorage.getItem("profile");
+
+    if (!profile) {
+
+        navigate("/profiles");
+
+    }
+
+}, []);
     const [showPopup, setShowPopup] = useState(false);
     const [loading, setLoading] = useState(true);
     const secretUnlocked =
@@ -224,6 +236,9 @@ const progress =
                 >
                     MUTIA RAHMAH
                 </h1>
+                <p className="mt-3 text-gray-400">
+    Welcome back, {localStorage.getItem("profile")}
+</p>
                 <p className="mt-4 text-gray-300">
     {greeting}
 </p>
@@ -508,7 +523,7 @@ duration-300 transition">
         {showPopup && (
 
     <div className="flex gap-3 items-center">
-        
+
         <p>
             Are you still watching?
         </p>
