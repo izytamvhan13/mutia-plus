@@ -9,6 +9,7 @@ import Timeline from "./pages/Timeline";
 import Gallery from "./pages/Gallery";
 import Letter from "./pages/Letter";
 import Secret from "./pages/Secret";
+import Ending from "./pages/Ending";
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
     <Route path="/gallery" element={<Gallery />} />
     <Route path="/letter" element={<Letter />} />
     <Route path="/secret" element={<Secret />} />
+    <Route path="/ending" element={<Ending />} />
 </Routes>
         </BrowserRouter>
     );
