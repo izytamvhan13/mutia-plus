@@ -10,22 +10,73 @@ import p9 from "../assets/gallery/09-birthday-girl.jpg";
 import p10 from "../assets/gallery/10-the-next-chapter.jpg";
 
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function Gallery() {
-
     const navigate = useNavigate();
+    const [selectedPhoto, setSelectedPhoto] = useState(null);
 
     const photos = [
-        { title: "Her Smile", image: p1 },
-        { title: "Sunshine Girl", image: p2 },
-        { title: "Mirror Pic", image: p3 },
-        { title: "Coffee Date", image: p4 },
-        { title: "Candid Moment", image: p5 },
-        { title: "Favorite Outfit", image: p6 },
-        { title: "Beautiful Eyes", image: p7 },
-        { title: "Random Day", image: p8 },
-        { title: "Birthday Girl", image: p9 },
-        { title: "The Next Chapter", image: p10 },
+        {
+            title: "Her Smile",
+            image: p1,
+            description:
+                "Senyum yang selalu berhasil membuat hariku sedikit lebih baik.",
+        },
+        {
+            title: "Sunshine Girl",
+            image: p2,
+            description:
+                "Ada orang yang datang seperti matahari, dan bagiku itu adalah Mutia.",
+        },
+        {
+            title: "Mirror Pic",
+            image: p3,
+            description:
+                "Foto sederhana yang entah kenapa selalu ingin kulihat lagi.",
+        },
+        {
+            title: "Coffee Date",
+            image: p4,
+            description:
+                "Karena beberapa percakapan terbaik dimulai dengan secangkir kopi.",
+        },
+        {
+            title: "Candid Moment",
+            image: p5,
+            description:
+                "Momen yang tidak direncanakan sering kali menjadi favorit.",
+        },
+        {
+            title: "Favorite Outfit",
+            image: p6,
+            description:
+                "Aku masih belum memutuskan, apakah yang lebih menarik itu outfit-nya atau orangnya.",
+        },
+        {
+            title: "Beautiful Eyes",
+            image: p7,
+            description:
+                "Ada banyak cerita yang bisa ditemukan di balik sepasang mata.",
+        },
+        {
+            title: "Random Day",
+            image: p8,
+            description:
+                "Hari yang biasa, tetapi menjadi tidak biasa karena diisi olehmu.",
+        },
+        {
+            title: "Birthday Girl",
+            image: p9,
+            description:
+                "Selamat bertambah usia, Sayang.",
+        },
+        {
+            title: "The Next Chapter",
+            image: p10,
+            description:
+                "Semoga ini bukan halaman terakhir yang kita tulis bersama.",
+        },
     ];
 
     return (
@@ -44,6 +95,7 @@ function Gallery() {
                 {photos.map((photo, index) => (
                     <div
                         key={index}
+                        onClick={() => setSelectedPhoto(photo)}
                         className="
                         group
                         hover:scale-105
@@ -69,6 +121,68 @@ function Gallery() {
                 ))}
 
             </div>
+
+            {selectedPhoto && (
+                <div
+                    className="
+                    fixed
+                    inset-0
+                    bg-black/90
+                    z-50
+                    flex
+                    items-center
+                    justify-center
+                    p-5
+                    "
+                >
+                    <div
+                        className="
+                        max-w-5xl
+                        w-full
+                        bg-gray-950
+                        rounded-2xl
+                        overflow-hidden
+                        "
+                    >
+                        <img
+                            src={selectedPhoto.image}
+                            alt={selectedPhoto.title}
+                            className="
+                            w-full
+                            max-h-[70vh]
+                            object-cover
+                            "
+                        />
+
+                        <div className="p-8">
+
+                            <h1 className="text-3xl md:text-4xl font-bold">
+                                {selectedPhoto.title}
+                            </h1>
+
+                            <p className="mt-5 text-gray-400">
+                                {selectedPhoto.description}
+                            </p>
+
+                            <button
+                                onClick={() => setSelectedPhoto(null)}
+                                className="
+                                mt-8
+                                bg-red-600
+                                px-6
+                                py-3
+                                rounded
+                                hover:scale-105
+                                transition
+                                "
+                            >
+                                Close
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <button
                 onClick={() => navigate("/letter")}
