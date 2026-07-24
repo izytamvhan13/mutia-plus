@@ -4,3 +4,20 @@ body {
     margin: 0;
     background: black;
 }
+
+@keyframes zoom {
+
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.tudum-animation {
+    animation: zoom 1.5s ease;
+}

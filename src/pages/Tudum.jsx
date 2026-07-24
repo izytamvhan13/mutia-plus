@@ -7,7 +7,7 @@ function Tudum() {
     useEffect(() => {
         const timer = setTimeout(() => {
             navigate("/splash");
-        }, 3000);
+        }, 3500);
 
         return () => clearTimeout(timer);
     }, []);
@@ -18,28 +18,62 @@ function Tudum() {
             min-h-screen
             bg-black
             flex
-            flex-col
             items-center
             justify-center
+            overflow-hidden
             "
         >
-            <h1
-                className="
-                text-5xl
-                md:text-8xl
-                font-bold
-                text-red-600
-                animate-pulse
-                tracking-[20px]
-drop-shadow-2xl
-                "
-            >
-                TUDUM
-            </h1>
+            <div className="text-center tudum-animation">
 
-            <p className="text-gray-500 mt-6">
-                Netflix Opening Experience
-            </p>
+                <h1
+                    className="
+                    text-6xl
+                    md:text-9xl
+                    font-black
+                    text-red-600
+                    tracking-[25px]
+                    "
+                >
+                    TUDUM
+                </h1>
+
+                <div className="mt-8 space-y-4">
+
+    <p
+        className="
+        text-gray-500
+        text-sm
+        md:text-lg
+        tracking-[8px]
+        "
+    >
+        NETFLIX PRESENTS
+    </p>
+
+    <p
+        className="
+        text-gray-400
+        italic
+        text-sm
+        md:text-base
+        "
+    >
+        Starring Mutia Rahmah
+    </p>
+
+    <p
+    className="
+    text-gray-600
+    text-xs
+    mt-8
+    "
+>
+    A story about two people, one birthday, and countless memories.
+</p>
+
+</div>
+
+            </div>
         </div>
     );
 }
