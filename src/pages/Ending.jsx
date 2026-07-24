@@ -1,75 +1,72 @@
+import { useNavigate } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
 
 function Ending() {
+
+    const navigate = useNavigate();
+
     return (
         <PageWrapper>
-        <div
-    className="
-    min-h-screen
-    bg-black
-    text-white
-    flex
-    flex-col
-    items-center
-    justify-center
-    text-center
-    p-5
-    fade-up
-    "
->
-            <p className="text-gray-500 mb-10">
-                Thank you for watching.
-            </p>
+            <div
+                className="
+                min-h-screen
+                bg-black
+                text-white
+                flex
+                flex-col
+                items-center
+                justify-center
+                text-center
+                p-5
+                "
+            >
+                <h1
+                    className="
+                    text-4xl
+                    md:text-7xl
+                    font-bold
+                    text-red-600
+                    "
+                >
+                    THANK YOU
+                </h1>
 
-            <h1 className="text-4xl md:text-7xl font-bold mb-8">
-                My Girlfriend's
-            </h1>
-
-            <div className="space-y-5 text-gray-300">
-
-                <p>
-                    Produced by
-                </p>
-
-                <h2 className="text-2xl">
-                    Prizy Aditia Fitra
+                <h2 className="mt-5 text-2xl md:text-4xl">
+                    FOR WATCHING
                 </h2>
 
-                <div className="pt-10">
-                    <p>Starring</p>
-
-                    <h2 className="text-2xl">
-                        Mutia Rahmah
-                    </h2>
-                </div>
-
-                <div className="pt-10">
-                    <p>Special Thanks</p>
-
-                    <p>Coffee</p>
-                    <p>Spotify</p>
-                    <p>Late Night Conversations</p>
-                    <p>The Universe</p>
-                </div>
-
-            </div>
-
-            <div className="mt-20">
-
-                <p className="text-red-500 text-xl">
-                    See you in the next chapter.
+                <p className="mt-10 text-gray-500">
+                    SAYANG
                 </p>
 
-                <p className="text-gray-600 mt-3">
-                    Coming December 30th, 2026.
+                <p className="text-gray-500">
+                    An Original Netflix Series
                 </p>
 
-                <p className="text-gray-700 mt-10 text-sm">
-    Season 1 Complete • 10/150 Chapters
-</p>
+                <div className="mt-10 text-3xl">
+                    ★★★★★
+                </div>
 
+                <p className="mt-10 max-w-xl text-gray-400">
+                    Every story eventually reaches its final scene.
+                    But I hope ours is only getting started.
+                </p>
+
+                <button
+                    onClick={() => navigate("/")}
+                    className="
+                    mt-10
+                    bg-red-600
+                    px-6
+                    py-3
+                    rounded
+                    hover:scale-110
+                    transition
+                    "
+                >
+                    Watch Again
+                </button>
             </div>
-        </div>
         </PageWrapper>
     );
 }
