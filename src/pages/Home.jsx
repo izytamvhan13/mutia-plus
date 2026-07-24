@@ -1,4 +1,5 @@
 import mutia from "../assets/images/mutia.jpg";
+import { useNavigate } from "react-router-dom";
 
 import p1 from "../assets/posters/1.jpg";
 import p2 from "../assets/posters/2.jpg";
@@ -75,7 +76,12 @@ function Home() {
                 <div className="hidden md:flex gap-8 text-gray-300">
                     <p>Home</p>
                     <p>Series</p>
-                    <p>My List</p>
+                    <p
+    className="cursor-pointer"
+    onClick={() => navigate("/my-list")}
+>
+    My List
+</p>
                 </div>
             </nav>
 
