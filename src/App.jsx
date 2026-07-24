@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import MyList from "./pages/MyList";
 import Timeline from "./pages/Timeline";
 import Gallery from "./pages/Gallery";
+import Letter from "./pages/Letter";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
     <Route path="/my-list" element={<MyList />} />
     <Route path="/timeline" element={<Timeline />} />
     <Route path="/gallery" element={<Gallery />} />
+    <Route path="/letter" element={<Letter />} />
 </Routes>
         </BrowserRouter>
     );
