@@ -8,6 +8,7 @@ import p4 from "../assets/posters/4.jpg";
 import p5 from "../assets/posters/5.jpg";
 
 function Home() {
+    const navigate = useNavigate();
     const trending = [
         {
             title: "Her Smile",

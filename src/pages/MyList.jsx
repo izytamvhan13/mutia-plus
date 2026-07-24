@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 function MyList() {
+    const navigate = useNavigate();
     const memories = [
         "First Chat",
         "First Photo",
@@ -14,6 +17,20 @@ function MyList() {
             <h1 className="text-5xl font-bold mb-10">
                 My List
             </h1>
+            <button
+    onClick={() => navigate("/timeline")}
+    className="
+    bg-red-600
+    px-6
+    py-3
+    rounded
+    mb-10
+    hover:scale-105
+    transition
+    "
+>
+    Continue to Timeline
+</button>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
