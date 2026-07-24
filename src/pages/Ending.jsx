@@ -1,18 +1,19 @@
 function Ending() {
     return (
         <div
-            className="
-            min-h-screen
-            bg-black
-            text-white
-            flex
-            flex-col
-            items-center
-            justify-center
-            text-center
-            p-5
-            "
-        >
+    className="
+    min-h-screen
+    bg-black
+    text-white
+    flex
+    flex-col
+    items-center
+    justify-center
+    text-center
+    p-5
+    fade-up
+    "
+>
             <p className="text-gray-500 mb-10">
                 Thank you for watching.
             </p>
@@ -59,6 +60,10 @@ function Ending() {
                 <p className="text-gray-600 mt-3">
                     Coming December 30th, 2026.
                 </p>
+
+                <p className="text-gray-700 mt-10 text-sm">
+    Season 1 Complete • 10/150 Chapters
+</p>
 
             </div>
         </div>

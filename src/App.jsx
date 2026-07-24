@@ -10,11 +10,15 @@ import Gallery from "./pages/Gallery";
 import Letter from "./pages/Letter";
 import Secret from "./pages/Secret";
 import Ending from "./pages/Ending";
+import MusicPlayer from "./components/MusicPlayer";
 
 function App() {
     return (
         <BrowserRouter>
-            <Routes>
+
+    <MusicPlayer />
+
+    <Routes>
     <Route path="/" element={<Tudum />} />
     <Route path="/splash" element={<Splash />} />
     <Route path="/profiles" element={<Profiles />} />

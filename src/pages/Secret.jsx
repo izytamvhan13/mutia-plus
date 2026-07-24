@@ -9,7 +9,7 @@ function Secret() {
 
     const checkPassword = () => {
 
-        if (password === "SECRET_PASSWORD") {
+        if (password === "160818") {
             navigate("/ending");
         } else {
             alert("Tanggal yg paling km ingat weeeee.");
