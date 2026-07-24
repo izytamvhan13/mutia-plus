@@ -1,121 +1,126 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PageWrapper from "../components/PageWrapper";
 
 function Letter() {
+  const fullText = `
+Happy Birthday, Sayang.
 
-    const navigate = useNavigate();
+Terima kasih karena sudah hadir di hidupku.
+Terima kasih untuk semua tawa, cerita, dan hal-hal kecil
+yang tanpa sadar menjadi bagian favorit dari hariku.
 
-    return (
-        <PageWrapper>
+Aku tidak tahu akan seperti apa masa depan nanti.
+Tetapi aku tahu satu hal.
+
+Jika semesta mengizinkan, aku ingin tetap menemukanmu
+di banyak hari yang akan datang.
+
+- Izyy
+`;
+
+  const navigate = useNavigate();
+  const [text, setText] = useState("");
+
+  useEffect(() => {
+    let index = 0;
+
+    const interval = setInterval(() => {
+      setText(fullText.slice(0, index));
+
+      index++;
+
+      if (index > fullText.length) {
+        clearInterval(interval);
+      }
+    }, 35);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <PageWrapper>
         <div
             className="
             min-h-screen
             bg-black
             text-white
-            px-5
-            md:px-20
-            py-20
+            flex
+            items-center
+            justify-center
+            p-5
             "
         >
-
-            <h1
-                className="
-                text-4xl
-                md:text-6xl
-                font-bold
-                mb-10
-                "
-            >
-                A Letter To Mutia Rahmah
-            </h1>
-
             <div
                 className="
                 max-w-4xl
-                text-gray-300
-                leading-9
-                text-lg
-                space-y-8
+                w-full
+                bg-gray-950
+                rounded-3xl
+                p-6
+                md:p-12
+                border
+                border-red-900/30
+                shadow-2xl
                 "
             >
+                <h1
+                    className="
+                    text-3xl
+                    md:text-6xl
+                    font-bold
+                    mb-10
+                    "
+                >
+                    A Letter To Mutia Rahmah
+                </h1>
 
-                <p>
-                    Hai, Sayang.
+                <pre
+                    className="
+                    whitespace-pre-wrap
+                    text-gray-300
+                    leading-8
+                    text-sm
+                    md:text-lg
+                    "
+                >
+                    {text}
+                </pre>
+
+                <h2
+                    className="
+                    mt-10
+                    text-2xl
+                    md:text-4xl
+                    text-red-500
+                    animate-pulse
+                    "
+                >
+                    — Prizy Aditia Fitra
+                </h2>
+
+                <p className="mt-8 italic text-gray-500">
+                    "Every great story deserves a beautiful ending."
                 </p>
 
-                <p>
-                    Kalau kamu sedang membaca halaman ini, berarti kamu sudah
-                    melewati semua chapter yang sudah aku siapkan. Dari Home,
-                    My List, Timeline, sampai Gallery.
-                </p>
-
-                <p>
-                    Aku tidak pernah benar-benar tahu bagaimana semesta bekerja.
-                    Tapi di antara miliaran orang di dunia ini, rasanya lucu
-                    juga kalau akhirnya aku dipertemukan dengan seorang
-                    perempuan bernama Mutia Rahmah.
-                </p>
-
-                <p>
-                    Terima kasih sudah hadir di banyak hari yang biasa dan
-                    membuatnya menjadi sedikit lebih berwarna.
-                </p>
-
-                <p>
-                    Terima kasih untuk setiap tawa, cerita, dan hal-hal kecil
-                    yang mungkin tidak pernah kamu sadari, tetapi berhasil
-                    tinggal cukup lama di kepalaku.
-                </p>
-
-                <p>
-                    Hari ini usiamu bertambah satu tahun. Semoga semua doa yang
-                    diam-diam kamu simpan bisa menemukan jalannya masing-masing.
-                </p>
-
-                <p>
-                    Dan kalau suatu hari nanti kamu bertanya apa harapanku,
-                    jawabannya sederhana:
-                </p>
-
-                <p className="italic text-red-500">
-                    "Semoga ini bukan menjadi chapter terakhir yang kita tulis
-                    bersama."
-                </p>
-
-                <p>
-                    Selamat ulang tahun, Mutia Rahmah.
-                </p>
-
-                <p>
-                    Dengan banyak rasa syukur,
-                </p>
-
-                <p className="font-bold text-xl">
-                    Prizy Aditia Fitra
-                </p>
-
+                <button
+    onClick={() => navigate("/ending")}
+    className="
+    mt-10
+    bg-red-600
+    px-6
+    py-3
+    rounded
+    hover:scale-105
+    transition
+    "
+>
+    Continue →
+</button>
             </div>
-
-            <button
-                onClick={() => navigate("/secret")}
-                className="
-                mt-16
-                bg-red-600
-                px-6
-                py-3
-                rounded
-                hover:scale-110
-hover:-translate-y-2
-duration-300
-                transition
-                "
-            >
-                Continue to Secret →
-            </button>
-
         </div>
-        </PageWrapper>
-    );
+    </PageWrapper>
+);
 }
 
 export default Letter;
