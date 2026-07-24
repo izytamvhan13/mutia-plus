@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PageWrapper from "../components/PageWrapper";
 import { SECRET_PASSWORD } from "../config/constants";
 
 function Secret() {
@@ -17,6 +18,7 @@ function Secret() {
     };
 
     return (
+        <PageWrapper>
         <div
             className="
             min-h-screen
@@ -68,7 +70,9 @@ function Secret() {
                 px-6
                 py-3
                 rounded
-                hover:scale-105
+                hover:scale-110
+hover:-translate-y-2
+duration-300
                 transition
                 "
             >
@@ -76,6 +80,7 @@ function Secret() {
             </button>
 
         </div>
+        </PageWrapper>
     );
 }
 

@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import PageWrapper from "../components/PageWrapper";
 
 function MyList() {
     const navigate = useNavigate();
@@ -12,6 +13,8 @@ function MyList() {
     ];
 
     return (
+
+        <PageWrapper>
         <div className="min-h-screen bg-black text-white p-10">
 
             <h1 className="text-5xl font-bold mb-10">
@@ -25,7 +28,9 @@ function MyList() {
     py-3
     rounded
     mb-10
-    hover:scale-105
+    hover:scale-110
+hover:-translate-y-2
+duration-300
     transition
     "
 >
@@ -42,7 +47,9 @@ function MyList() {
                         bg-gray-900
                         rounded-xl
                         p-6
-                        hover:scale-105
+                        hover:scale-110
+hover:-translate-y-2
+duration-300
                         transition
                         "
                     >
@@ -58,6 +65,7 @@ function MyList() {
 
             </div>
         </div>
+        </PageWrapper>
     );
 }
 

@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import PageWrapper from "../components/PageWrapper";
 
 function Letter() {
 
     const navigate = useNavigate();
 
     return (
+        <PageWrapper>
         <div
             className="
             min-h-screen
@@ -102,7 +104,9 @@ function Letter() {
                 px-6
                 py-3
                 rounded
-                hover:scale-105
+                hover:scale-110
+hover:-translate-y-2
+duration-300
                 transition
                 "
             >
@@ -110,6 +114,7 @@ function Letter() {
             </button>
 
         </div>
+        </PageWrapper>
     );
 }
 

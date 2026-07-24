@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import PageWrapper from "../components/PageWrapper";
 
 function Timeline() {
 
@@ -38,6 +39,7 @@ function Timeline() {
     ];
 
     return (
+        <PageWrapper>
         <div className="min-h-screen bg-black text-white p-5 md:p-10">
 
             <h1 className="text-4xl md:text-6xl font-bold mb-16">
@@ -80,7 +82,9 @@ function Timeline() {
                 px-6
                 py-3
                 rounded
-                hover:scale-105
+                hover:scale-110
+hover:-translate-y-2
+duration-300
                 transition
                 "
             >
@@ -88,6 +92,7 @@ function Timeline() {
             </button>
 
         </div>
+        </PageWrapper>
     );
 }
 

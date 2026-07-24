@@ -1,9 +1,13 @@
 import { useNavigate } from "react-router-dom";
+import PageWrapper from "../components/PageWrapper";
 
 function Splash() {
 
   const navigate = useNavigate();
     return (
+
+        <PageWrapper>
+
         <div className="h-screen bg-black flex flex-col items-center justify-center text-white">
             <h2 className="text-sm tracking-[12px] text-gray-400 mb-8">
     NETFLIX PRESENTS
@@ -32,12 +36,15 @@ function Splash() {
     hover:bg-red-700
     transition
     duration-300
-    hover:scale-105
+    hover:scale-110
+hover:-translate-y-2
+duration-300
     "
 >
     ENTER
 </button>
         </div>
+        </PageWrapper>
     );
 }
 

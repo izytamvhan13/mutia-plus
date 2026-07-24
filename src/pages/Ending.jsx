@@ -1,5 +1,8 @@
+import PageWrapper from "../components/PageWrapper";
+
 function Ending() {
     return (
+        <PageWrapper>
         <div
     className="
     min-h-screen
@@ -67,6 +70,7 @@ function Ending() {
 
             </div>
         </div>
+        </PageWrapper>
     );
 }
 

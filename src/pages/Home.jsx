@@ -1,5 +1,7 @@
 import mutia from "../assets/images/mutia.jpg";
 import { useNavigate } from "react-router-dom";
+import PageWrapper from "../components/PageWrapper";
+import Reveal from "../components/Reveal";
 
 import p1 from "../assets/posters/1.jpg";
 import p2 from "../assets/posters/2.jpg";
@@ -33,6 +35,8 @@ function Home() {
     ];
 
     return (
+        <PageWrapper>
+        <Reveal>
         <div
             className="
             min-h-screen
@@ -140,7 +144,9 @@ function Home() {
                         px-8
                         py-3
                         rounded
-                        hover:scale-105
+                        hover:scale-110
+hover:-translate-y-2
+duration-300
                         transition
                         "
                     >
@@ -186,7 +192,9 @@ function Home() {
                     flex-wrap
                     "
                 >
-                    <div className="w-full md:w-72 h-40 bg-gray-900 rounded-lg p-5 hover:scale-105 transition">
+                    <div className="w-full md:w-72 h-40 bg-gray-900 rounded-lg p-5 hover:scale-110
+hover:-translate-y-2
+duration-300 transition">
                         <h3 className="font-semibold">Episode 1</h3>
 
                         <p className="mt-3 text-gray-400">
@@ -194,7 +202,9 @@ function Home() {
                         </p>
                     </div>
 
-                    <div className="w-full md:w-72 h-40 bg-gray-900 rounded-lg p-5 hover:scale-105 transition">
+                    <div className="w-full md:w-72 h-40 bg-gray-900 rounded-lg p-5 hover:scale-110
+hover:-translate-y-2
+duration-300 transition">
                         <h3 className="font-semibold">Episode 2</h3>
 
                         <p className="mt-3 text-gray-400">
@@ -202,7 +212,9 @@ function Home() {
                         </p>
                     </div>
 
-                    <div className="w-full md:w-72 h-40 bg-gray-900 rounded-lg p-5 hover:scale-105 transition">
+                    <div className="w-full md:w-72 h-40 bg-gray-900 rounded-lg p-5 hover:scale-110
+hover:-translate-y-2
+duration-300 transition">
                         <h3 className="font-semibold">Episode 3</h3>
 
                         <p className="mt-3 text-gray-400">
@@ -210,7 +222,9 @@ function Home() {
                         </p>
                     </div>
 
-                    <div className="w-full md:w-72 h-40 bg-gray-900 rounded-lg p-5 hover:scale-105 transition">
+                    <div className="w-full md:w-72 h-40 bg-gray-900 rounded-lg p-5 hover:scale-110
+hover:-translate-y-2
+duration-300 transition">
                         <h3 className="font-semibold">Episode 4</h3>
 
                         <p className="mt-3 text-gray-400">
@@ -282,6 +296,8 @@ function Home() {
                 </p>
             </footer>
         </div>
+        </Reveal>
+        </PageWrapper>
     );
 }
 

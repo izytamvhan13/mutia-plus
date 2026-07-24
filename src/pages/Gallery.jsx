@@ -8,6 +8,7 @@ import p7 from "../assets/gallery/07-beautiful-eyes.jpg";
 import p8 from "../assets/gallery/08-random-day.jpg";
 import p9 from "../assets/gallery/09-birthday-girl.jpg";
 import p10 from "../assets/gallery/10-the-next-chapter.jpg";
+import PageWrapper from "../components/PageWrapper";
 
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -80,6 +81,7 @@ function Gallery() {
     ];
 
     return (
+        <PageWrapper>
         <div className="min-h-screen bg-black text-white p-5 md:p-10">
 
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
@@ -98,7 +100,9 @@ function Gallery() {
                         onClick={() => setSelectedPhoto(photo)}
                         className="
                         group
-                        hover:scale-105
+                        hover:scale-110
+hover:-translate-y-2
+duration-300
                         transition
                         cursor-pointer
                         "
@@ -172,7 +176,9 @@ function Gallery() {
                                 px-6
                                 py-3
                                 rounded
-                                hover:scale-105
+                                hover:scale-110
+hover:-translate-y-2
+duration-300
                                 transition
                                 "
                             >
@@ -192,7 +198,9 @@ function Gallery() {
                 px-6
                 py-3
                 rounded
-                hover:scale-105
+                hover:scale-110
+hover:-translate-y-2
+duration-300
                 transition
                 "
             >
@@ -200,6 +208,7 @@ function Gallery() {
             </button>
 
         </div>
+        </PageWrapper>
     );
 }
 

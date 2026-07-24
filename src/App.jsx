@@ -11,12 +11,14 @@ import Letter from "./pages/Letter";
 import Secret from "./pages/Secret";
 import Ending from "./pages/Ending";
 import MusicPlayer from "./components/MusicPlayer";
+import FloatingHearts from "./components/FloatingHearts";
 
 function App() {
     return (
         <BrowserRouter>
 
     <MusicPlayer />
+    <FloatingHearts />
 
     <Routes>
     <Route path="/" element={<Tudum />} />

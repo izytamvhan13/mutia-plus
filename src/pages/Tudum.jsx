@@ -34,7 +34,7 @@ function Tudum() {
                     tracking-[25px]
                     "
                 >
-                    TUDUM
+                    HAI SAYANG
                 </h1>
 
                 <div className="mt-8 space-y-4">
