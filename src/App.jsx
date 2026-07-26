@@ -1,41 +1,44 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-import Tudum from "./pages/Tudum";
-import Splash from "./pages/Splash";
-import Profiles from "./pages/Profiles";
-import Home from "./pages/Home";
-import MyList from "./pages/MyList";
-import Timeline from "./pages/Timeline";
-import Gallery from "./pages/Gallery";
-import Letter from "./pages/Letter";
-import Secret from "./pages/Secret";
-import Ending from "./pages/Ending";
-import MusicPlayer from "./components/MusicPlayer";
-import FloatingHearts from "./components/FloatingHearts";
-import Credits from "./pages/Credits";
+import Tudum from "./pages/Tudum"
+import Splash from "./pages/Splash"
+import Profiles from "./pages/Profiles"
+import Home from "./pages/Home"
+import MyList from "./pages/MyList"
+import Timeline from "./pages/Timeline"
+import Gallery from "./pages/Gallery"
+import Letter from "./pages/Letter"
+import Secret from "./pages/Secret"
+import Ending from "./pages/Ending"
+import MusicPlayer from "./components/MusicPlayer"
+import FloatingHearts from "./components/FloatingHearts"
+import Credits from "./pages/Credits"
+import Episodes from "./pages/Episodes"
+import EpisodeDetail from "./pages/EpisodeDetail"
 
 function App() {
     return (
         <BrowserRouter>
+            <MusicPlayer />
+            <FloatingHearts />
 
-    <MusicPlayer />
-    <FloatingHearts />
-
-    <Routes>
-    <Route path="/" element={<Tudum />} />
-    <Route path="/splash" element={<Splash />} />
-    <Route path="/profiles" element={<Profiles />} />
-    <Route path="/home" element={<Home />} />
-    <Route path="/my-list" element={<MyList />} />
-    <Route path="/timeline" element={<Timeline />} />
-    <Route path="/gallery" element={<Gallery />} />
-    <Route path="/letter" element={<Letter />} />
-    <Route path="/secret" element={<Secret />} />
-    <Route path="/ending" element={<Ending />} />
-    <Route path="/credits" element={<Credits />} />
-</Routes>
+            <Routes>
+                <Route path="/" element={<Tudum />} />
+                <Route path="/splash" element={<Splash />} />
+                <Route path="/profiles" element={<Profiles />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/my-list" element={<MyList />} />
+                <Route path="/timeline" element={<Timeline />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/letter" element={<Letter />} />
+                <Route path="/secret" element={<Secret />} />
+                <Route path="/ending" element={<Ending />} />
+                <Route path="/credits" element={<Credits />} />
+                <Route path="/episodes" element={<Episodes />} />
+                <Route path="/episode/:id" element={<EpisodeDetail />} />
+            </Routes>
         </BrowserRouter>
-    );
+    )
 }
 
-export default App;
+export default App

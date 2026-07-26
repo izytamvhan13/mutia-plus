@@ -6,6 +6,11 @@ function Letter() {
     useEffect(() => {
 
     localStorage.setItem(
+        "currentEpisode",
+        "6"
+    );
+
+    localStorage.setItem(
         "readLetter",
         "true"
     );
