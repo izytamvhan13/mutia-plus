@@ -15,6 +15,7 @@ import FloatingHearts from "./components/FloatingHearts"
 import Credits from "./pages/Credits"
 import Episodes from "./pages/Episodes"
 import EpisodeDetail from "./pages/EpisodeDetail"
+import Highlight from "./pages/Highlight"
 
 function App() {
     return (
@@ -36,6 +37,7 @@ function App() {
                 <Route path="/credits" element={<Credits />} />
                 <Route path="/episodes" element={<Episodes />} />
                 <Route path="/episode/:id" element={<EpisodeDetail />} />
+                <Route path="/highlight" element={<Highlight />} />
             </Routes>
         </BrowserRouter>
     )

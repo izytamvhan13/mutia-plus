@@ -117,42 +117,32 @@ function EpisodeDetail() {
                     </div>
 
                     {episode.id < 6 && (
-    <button
-        onClick={() => {
-            const completed =
-                JSON.parse(
-                    localStorage.getItem(
-                        "completedEpisodes"
-                    )
-                ) || [];
+                        <button
+                            onClick={() => {
+                                const completed =
+                                    JSON.parse(
+                                        localStorage.getItem(
+                                            "completedEpisodes",
+                                        ),
+                                    ) || []
 
-            if (
-                !completed.includes(
-                    episode.id
-                )
-            ) {
-                completed.push(
-                    episode.id
-                );
-            }
+                                if (!completed.includes(episode.id)) {
+                                    completed.push(episode.id)
+                                }
 
-            localStorage.setItem(
-                "completedEpisodes",
-                JSON.stringify(
-                    completed
-                )
-            );
+                                localStorage.setItem(
+                                    "completedEpisodes",
+                                    JSON.stringify(completed),
+                                )
 
-            localStorage.setItem(
-                "currentEpisode",
-                episode.id + 1
-            );
+                                localStorage.setItem(
+                                    "currentEpisode",
+                                    episode.id + 1,
+                                )
 
-            navigate(
-                "/episodes"
-            );
-        }}
-        className="
+                                navigate("/episodes")
+                            }}
+                            className="
         mt-12
         bg-red-600
         px-8
@@ -161,13 +151,14 @@ function EpisodeDetail() {
         hover:bg-red-700
         duration-300
         "
-    >
-        Selesai Membaca
-    </button>
-)}
+                        >
+                            Selesai Membaca
+                        </button>
+                    )}
 
                     {episode.id === 6 && (
                         <button
+                            onClick={() => navigate("/highlight")}
                             className="
         mt-12
         bg-red-600
