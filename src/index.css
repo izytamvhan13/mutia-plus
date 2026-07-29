@@ -5,6 +5,55 @@ body {
     background: black;
 }
 
+@font-face {
+    font-family: "Bebas";
+    src: url("./assets/fonts/BebasNeue.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("./assets/fonts/Inter-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "InterBold";
+    src: url("./assets/fonts/Inter-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Playfair";
+    src: url("./assets/fonts/PlayfairDisplaySC-Regular.ttf")
+        format("truetype");
+}
+
+@font-face {
+    font-family: "PlayfairBold";
+    src: url("./assets/fonts/PlayfairDisplaySC-Bold.ttf")
+        format("truetype");
+}
+
+@font-face {
+    font-family: "Cormorant";
+    src: url("./assets/fonts/CormorantGaramond-Regular.ttf")
+        format("truetype");
+}
+
+@font-face {
+    font-family: "CormorantItalic";
+    src: url("./assets/fonts/CormorantGaramond-Italic.ttf")
+        format("truetype");
+}
+
+@font-face {
+    font-family: "CormorantBold";
+    src: url("./assets/fonts/CormorantGaramond-Bold.ttf")
+        format("truetype");
+}
+
+body {
+    font-family: sans-serif;
+}
+
 @keyframes zoom {
 
     0% {
@@ -36,4 +85,52 @@ body {
 
 .tudum-animation {
     animation: zoom 1.5s ease;
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}
+
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.animate-fadeIn {
+
+    animation: fadeIn 1.2s ease forwards;
+
+}
+
+@keyframes titleReveal {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
