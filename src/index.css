@@ -134,3 +134,13 @@ body {
         transform: scale(1);
     }
 }
+
+@keyframes credits {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-120%);
+    }
+}

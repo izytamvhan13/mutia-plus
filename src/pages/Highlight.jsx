@@ -38,8 +38,8 @@ function Highlight() {
                     setShowMessage(true)
 
                     setTimeout(() => {
-                        navigate("/ending")
-                    }, 3000)
+                        navigate("/credits")
+                    }, 5000)
                 }}
                 className="
     w-full
